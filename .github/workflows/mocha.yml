@@ -76,7 +76,6 @@ jobs:
 
   test-node:
     name: 'Node.js [v${{ matrix.node }} / ${{ matrix.os }}]'
-    needs: smoke
     runs-on: '${{ matrix.os }}'
     env:
       NODE_OPTIONS: '--trace-warnings'
