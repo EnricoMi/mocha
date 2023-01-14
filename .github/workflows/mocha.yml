@@ -113,15 +113,11 @@ jobs:
             ${{ matrix.os }}-node-v${{ matrix.node }}-
       - name: Install Dependencies
         run: npm ci --ignore-scripts
-      - name: Install Annotation Support
-        run: npm install mocha-github-actions-reporter
       - name: Run All Node.js Tests
         run: npm start test.node
         env:
           COVERAGE: '${{ matrix.env.COVERAGE }}'
-          MOCHA_REPORTER: mocha-github-actions-reporter
-          # this is so mocha-github-actions-reporter can find mocha
-          NODE_PATH: lib
+          MOCHA_REPORTER: json
       - name: Generate Coverage Report (Linux + Node.js latest)
         if: ${{ matrix.env.COVERAGE }}
         run: npm start coverage-report-lcov
