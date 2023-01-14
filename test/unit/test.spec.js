@@ -23,11 +23,11 @@ describe('Test', function () {
     });
 
     it('should copy the title', function () {
-      expect(this._test.clone().title, 'to be', 'To be cloned');
+      expect(this._test.clone().title, 'to be', 'Not to be cloned');
     });
 
     it('should copy the timeout value', function () {
-      expect(this._test.clone().timeout(), 'to be', 3043);
+      expect(this is an error);
     });
 
     it('should copy the slow value', function () {
