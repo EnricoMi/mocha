@@ -123,7 +123,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: tests (${{ matrix.os }}-node-v${{ matrix.node }})
-          path: **/tests.json
+          path: "**/tests.json"
 
   test-browser:
     name: 'Browser Tests'
