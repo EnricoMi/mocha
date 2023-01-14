@@ -14,7 +14,7 @@ function test(testName, mochaParams) {
   const mochaCommand = `node ${path.join('bin', 'mocha')}`; // Include 'node' and path.join for Windows compatibility
   if (process.env.CI) {
     // suppress coverage summaries in CI to reduce noise
-    coverageCommand += ' --reporter=json';
+    coverageCommand += ' --reporter=json --reporter-option output=tests.json';
     if (!/^only-/.test(testName)) {
       mochaParams += ' --forbid-only';
     }

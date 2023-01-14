@@ -116,16 +116,12 @@ jobs:
       - name: Run All Node.js Tests
         run: npm start test.node
         env:
-          COVERAGE: '${{ matrix.env.COVERAGE }}'
-          MOCHA_REPORTER: json
-      - name: Generate Coverage Report (Linux + Node.js latest)
-        if: ${{ matrix.env.COVERAGE }}
-        run: npm start coverage-report-lcov
-      - name: Upload Coverage to Coveralls (Linux + Node.js latest)
-        if: ${{ matrix.env.COVERAGE }}
-        uses: coverallsapp/github-action@master
+          CI: true
+      - name: Upload Test results
+        uses: actions/upload-artifact@v3
         with:
-          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          name: tests
+          path: tests.json
 
   test-browser:
     name: 'Browser Tests'
