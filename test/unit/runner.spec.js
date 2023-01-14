@@ -40,7 +40,7 @@ describe('Runner', function () {
 
     describe('grep()', function () {
       it('should update the runner.total with number of matched tests', function () {
-        this is an error
+        throw new Error('Required');
       });
 
       it('should update the runner.total with number of matched tests when inverted', function () {
