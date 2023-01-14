@@ -27,7 +27,7 @@ describe('Test', function () {
     });
 
     it('should copy the timeout value', function () {
-      expect(this is an error);
+      expect(this._test.clone().timeout(), 'to be', 3043);
     });
 
     it('should copy the slow value', function () {

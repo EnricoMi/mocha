@@ -40,12 +40,7 @@ describe('Runner', function () {
 
     describe('grep()', function () {
       it('should update the runner.total with number of matched tests', function () {
-        suite.addTest(new Test('im a test about lions', noop));
-        suite.addTest(new Test('im another test about lions', noop));
-        suite.addTest(new Test('im a test about bears', noop));
-        var newRunner = new Runner(suite);
-        newRunner.grep(/lions/);
-        expect(newRunner.total, 'to be', 2);
+        this is an error
       });
 
       it('should update the runner.total with number of matched tests when inverted', function () {
