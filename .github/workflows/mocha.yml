@@ -81,6 +81,7 @@ jobs:
     env:
       NODE_OPTIONS: '--trace-warnings'
     strategy:
+      fail-fast: false
       matrix:
         os:
           - ubuntu-latest
@@ -118,9 +119,10 @@ jobs:
         env:
           CI: true
       - name: Upload Test results
+        if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: tests
+          name: tests (${{ matrix.os }}-node-v${{ matrix.node }})
           path: tests.json
 
   test-browser:
